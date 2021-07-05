@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import './transaction.dart';
 
@@ -47,12 +48,19 @@ class MyHomePage extends StatelessWidget {
             Card(
               color: Colors.purpleAccent,
               child: Text("BURALAR DUTLUK"),
-              elevation: 10,
             ),
             Column(
               children: transactions
                   .map((tx) => Card(
+                        color: Colors.teal,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(
+                            bottom: Radius.circular(15),
+                          ),
+                        ),
+                        elevation: 25,
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
                               child: ElevatedButton(
@@ -74,18 +82,30 @@ class MyHomePage extends StatelessWidget {
                               children: [
                                 Text(tx.title),
                                 Text("bruh"),
-                                Text(tx.date.toString()),
+                                Text(
+                                  tx.date.toString(),
+                                  style: TextStyle(
+                                      color: Colors.red,
+                                      backgroundColor: Colors.cyanAccent,
+                                      fontWeight: FontWeight.bold),
+                                ),
                               ],
                             ),
                             Container(
                               margin: EdgeInsets.all(10),
                               padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(
-                                  border: Border.all(
-                                color: Colors.amber,
-                                width: 5,
-                              )),
-                              child: Text(tx.amount.toString()),
+                                border: Border.all(
+                                  color: Colors.amber,
+                                  width: 5,
+                                ),
+                              ),
+                              child: Text(
+                                tx.amount.toString(),
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                           ],
                         ),
