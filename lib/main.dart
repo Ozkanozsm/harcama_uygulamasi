@@ -79,9 +79,12 @@ class MyHomePage extends StatelessWidget {
                                   vertical: 5, horizontal: 20),
                             ),
                             Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(tx.title),
-                                Text("bruh"),
+                                Text(
+                                  tx.title,
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
                                 Text(
                                   tx.date.toString(),
                                   style: TextStyle(
@@ -101,7 +104,8 @@ class MyHomePage extends StatelessWidget {
                                 ),
                               ),
                               child: Text(
-                                tx.amount.toString(),
+                                // TODO fix
+                                tx.amount.toString().padLeft(5, "0"),
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                 ),
