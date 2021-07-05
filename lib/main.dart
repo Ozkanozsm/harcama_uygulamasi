@@ -56,11 +56,19 @@ class MyHomePage extends StatelessWidget {
                           children: [
                             Container(
                               child: ElevatedButton(
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          Colors.green),
+                                ),
                                 child: Icon(
-                                  Icons.money,
+                                  Icons.attach_money_outlined,
+                                  color: Colors.white,
                                 ),
                                 onPressed: null,
                               ),
+                              margin: EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 20),
                             ),
                             Column(
                               children: [
@@ -70,6 +78,13 @@ class MyHomePage extends StatelessWidget {
                               ],
                             ),
                             Container(
+                              margin: EdgeInsets.all(10),
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                color: Colors.amber,
+                                width: 5,
+                              )),
                               child: Text(tx.amount.toString()),
                             ),
                           ],
