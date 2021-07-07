@@ -33,8 +33,10 @@ class MyHomePage extends StatelessWidget {
     ),
   ];
 
-  String? titleInput;
-  String? amountInput;
+  // String? titleInput;
+  // String? amountInput;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -62,16 +64,20 @@ class MyHomePage extends StatelessWidget {
                       children: [
                         TextField(
                           decoration: InputDecoration(labelText: "Title"),
-                          onChanged: (value) => titleInput = value,
+                          controller: titleController,
+                          // onChanged: (value) => titleInput = value,
                         ),
                         TextField(
                           decoration: InputDecoration(labelText: "Amount"),
-                          onChanged: (value) => amountInput = value,
+                          controller: amountController,
+                          // onChanged: (value) => amountInput = value,
                         ),
                         TextButton(
                           onPressed: () {
-                            print("title: $titleInput");
-                            print("amount: $amountInput");
+                            print(titleController.text);
+                            print(amountController.text);
+                            // print("title: $titleInput");
+                            // print("amount: $amountInput");
                           },
                           child: Text(
                             "Add Transaction",
