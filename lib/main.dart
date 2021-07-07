@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './transaction.dart';
+import './models/transaction.dart';
 import './TransactionsColumn.dart';
 
 void main() {
