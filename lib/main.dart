@@ -49,7 +49,40 @@ class MyHomePage extends StatelessWidget {
               color: Colors.purpleAccent,
               child: Text("BURALAR DUTLUK"),
             ),
-            TransactionsColumn(transactions),
+            Column(
+              children: [
+                Card(
+                  elevation: 10,
+                  child: Container(
+                    padding: EdgeInsets.all(5),
+                    child: Column(
+                      children: [
+                        TextField(
+                          decoration: InputDecoration(labelText: "TextField1"),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(labelText: "TextField2"),
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "Add Transaction",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          style: ButtonStyle(
+                            foregroundColor: MaterialStateProperty.all<Color>(
+                                Colors.blueAccent),
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                Colors.green.shade300),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                TransactionsColumn(transactions),
+              ],
+            ),
           ],
         ),
       ),
