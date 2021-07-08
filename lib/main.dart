@@ -19,8 +19,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   // String? titleInput;
   // String? amountInput;
-  final titleController = TextEditingController();
-  final amountController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -40,44 +38,6 @@ class MyHomePage extends StatelessWidget {
             ),
             Column(
               children: [
-                Card(
-                  elevation: 10,
-                  child: Container(
-                    padding: EdgeInsets.all(5),
-                    child: Column(
-                      children: [
-                        TextField(
-                          decoration: InputDecoration(labelText: "Title"),
-                          controller: titleController,
-                          // onChanged: (value) => titleInput = value,
-                        ),
-                        TextField(
-                          decoration: InputDecoration(labelText: "Amount"),
-                          controller: amountController,
-                          // onChanged: (value) => amountInput = value,
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            print(titleController.text);
-                            print(amountController.text);
-                            // print("title: $titleInput");
-                            // print("amount: $amountInput");
-                          },
-                          child: Text(
-                            "Add Transaction",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          style: ButtonStyle(
-                            foregroundColor: MaterialStateProperty.all<Color>(
-                                Colors.blueAccent),
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                                Colors.green.shade300),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
                 UserTransactions(),
               ],
             ),
