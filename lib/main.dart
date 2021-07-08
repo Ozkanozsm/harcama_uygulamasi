@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './models/transaction.dart';
-import './TransactionsColumn.dart';
+import './widgets/user_transactions.dart';
 
 void main() {
   runApp(MyApp());
