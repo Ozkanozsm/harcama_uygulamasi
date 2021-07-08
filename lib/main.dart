@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import './models/transaction.dart';
 import './widgets/user_transactions.dart';
 
 void main() {
@@ -18,21 +17,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final List<Transaction> transactions = [
-    Transaction(
-      id: "t01",
-      title: "Shoes",
-      amount: 85,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: "t02",
-      title: "Tickets",
-      amount: 29.99,
-      date: DateTime.now(),
-    ),
-  ];
-
   // String? titleInput;
   // String? amountInput;
   final titleController = TextEditingController();
@@ -94,7 +78,7 @@ class MyHomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                TransactionsColumn(transactions),
+                UserTransactions(),
               ],
             ),
           ],
