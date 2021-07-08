@@ -23,6 +23,18 @@ class _UserTransactionsState extends State<UserTransactions> {
       amount: 29.99,
       date: DateTime.now(),
     ),
+    Transaction(
+      id: "t03",
+      title: "Groceries",
+      amount: 40.5,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: "t04",
+      title: "Bills",
+      amount: 95.0,
+      date: DateTime.now(),
+    ),
   ];
 
   void _addNewTransaction(String txTitle, double txAmount) {
@@ -43,7 +55,7 @@ class _UserTransactionsState extends State<UserTransactions> {
   Widget build(BuildContext context) {
     return Column(children: [
       TransactionInput(_addNewTransaction),
-      TransactionList(_transactions),
+      SingleChildScrollView(child: TransactionList(_transactions)),
     ]);
   }
 }

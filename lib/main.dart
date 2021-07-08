@@ -28,20 +28,22 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Container(
         alignment: Alignment.center,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Card(
-              color: Colors.purpleAccent,
-              child: Text("BURALAR DUTLUK"),
-            ),
-            Column(
-              children: [
-                UserTransactions(),
-              ],
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Card(
+                color: Colors.purpleAccent,
+                child: Text("BURALAR DUTLUK"),
+              ),
+              Column(
+                children: [
+                  UserTransactions(),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
