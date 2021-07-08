@@ -66,8 +66,7 @@ class TransactionList extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    // TODO fix
-                    transactions[index].amount.toString().padLeft(5, "0"),
+                    transactions[index].amount.toStringAsFixed(2),
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
