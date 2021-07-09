@@ -32,17 +32,14 @@ class TransactionInput extends StatelessWidget {
             TextField(
               decoration: InputDecoration(labelText: "Title"),
               controller: titleController,
-              // TODO fix
-              onSubmitted: (_) => submitTx,
+              onSubmitted: (_) => submitTx(),
               // onChanged: (value) => titleInput = value,
             ),
             TextField(
               decoration: InputDecoration(labelText: "Amount"),
               controller: amountController,
               keyboardType: TextInputType.number,
-              // TODO fix
-              onSubmitted: (_) => submitTx,
-
+              onSubmitted: (_) => submitTx(),
               // onChanged: (value) => amountInput = value,
             ),
             TextButton(
