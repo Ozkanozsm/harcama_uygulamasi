@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter App',
+      debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
   }
@@ -25,6 +26,12 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter App'),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.add_circle),
+          ),
+        ],
       ),
       body: Container(
         alignment: Alignment.center,
