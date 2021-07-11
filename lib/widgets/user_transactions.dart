@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/transaction.dart';
+import './chart.dart';
 import './transaction_input.dart';
 import './transaction_list.dart';
 
@@ -55,6 +56,7 @@ class _UserTransactionsState extends State<UserTransactions> {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
+      Chart(_transactions),
       TransactionInput(_addNewTransaction),
       SingleChildScrollView(child: TransactionList(_transactions)),
     ]);
