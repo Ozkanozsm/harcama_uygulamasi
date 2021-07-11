@@ -55,10 +55,8 @@ class TransactionInput extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               style: ButtonStyle(
-                foregroundColor:
-                    MaterialStateProperty.all<Color>(Colors.blueAccent),
-                backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.green.shade300),
+                foregroundColor: MaterialStateProperty.all<Color>(
+                    Theme.of(context).primaryColor),
               ),
             ),
           ],

@@ -28,8 +28,8 @@ class TransactionList extends StatelessWidget {
                 Container(
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.green),
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Theme.of(context).primaryColor),
                     ),
                     child: Icon(
                       Icons.attach_money_outlined,
@@ -50,7 +50,7 @@ class TransactionList extends StatelessWidget {
                       DateFormat('E, dd-MM-yy')
                           .format(transactions[index].date),
                       style: TextStyle(
-                          color: Colors.red,
+                          color: Theme.of(context).primaryColorDark,
                           backgroundColor: Colors.cyanAccent,
                           fontWeight: FontWeight.bold),
                     ),
@@ -61,7 +61,7 @@ class TransactionList extends StatelessWidget {
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.amber,
+                      color: Theme.of(context).accentColor,
                       width: 5,
                     ),
                   ),
