@@ -10,32 +10,33 @@ class UserTransactions extends StatefulWidget {
 }
 
 class _UserTransactionsState extends State<UserTransactions> {
-  final List<Transaction> _transactions = [
-    Transaction(
-      id: "t01",
-      title: "Shoes",
-      amount: 85,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: "t02",
-      title: "Tickets",
-      amount: 29.99,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: "t03",
-      title: "Groceries",
-      amount: 40.5,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: "t04",
-      title: "Bills",
-      amount: 95.0,
-      date: DateTime.now(),
-    ),
-  ];
+  final List<Transaction> _transactions = [];
+  // final List<Transaction> _transactions = [
+  //   Transaction(
+  //     id: "t01",
+  //     title: "Shoes",
+  //     amount: 85,
+  //     date: DateTime.now(),
+  //   ),
+  //   Transaction(
+  //     id: "t02",
+  //     title: "Tickets",
+  //     amount: 29.99,
+  //     date: DateTime.now(),
+  //   ),
+  //   Transaction(
+  //     id: "t03",
+  //     title: "Groceries",
+  //     amount: 40.5,
+  //     date: DateTime.now(),
+  //   ),
+  //   Transaction(
+  //     id: "t04",
+  //     title: "Bills",
+  //     amount: 95.0,
+  //     date: DateTime.now(),
+  //   ),
+  // ];
 
   void _addNewTransaction(String txTitle, double txAmount) {
     final newTx = Transaction(
