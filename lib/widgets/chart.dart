@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../models/transaction.dart';
+import './chart_bars.dart';
 
 class Chart extends StatelessWidget {
   final List<Transaction> recentTxs;
   Chart(this.recentTxs);
 
-  List<Map<String, Object>> get groupedTxValues {
+  List get groupedTxValues {
     return List.generate(7, (index) {
       final day = DateTime.now().subtract(Duration(days: index));
       double totalSum = 0.0;
@@ -25,6 +26,10 @@ class Chart extends StatelessWidget {
     });
   }
 
+  double get totalSpending {
+    return groupedTxValues.fold(0, (prev, elem) => prev + elem["amount"]);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -32,7 +37,8 @@ class Chart extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
       child: Row(
         children: groupedTxValues.map((data) {
-          return Text('${data["day"]}: ${data["amount"].toString()}');
+          return ChartBar(
+              data["day"], data["amount"], data["amount"] / totalSpending);
         }).toList(),
       ),
     );
