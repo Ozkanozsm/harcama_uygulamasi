@@ -29,8 +29,12 @@ class Chart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 10,
-      margin: EdgeInsets.all(15),
-      child: Text("TEMP"),
+      margin: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+      child: Row(
+        children: groupedTxValues.map((data) {
+          return Text('${data["day"]}: ${data["amount"].toString()}');
+        }).toList(),
+      ),
     );
   }
 }
