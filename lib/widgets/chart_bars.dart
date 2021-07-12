@@ -13,37 +13,40 @@ class ChartBar extends StatelessWidget {
       children: [
         Text("${spAmount.toStringAsFixed(0)}"),
         SizedBox(
-          height: 4,
+          height: 1.5,
         ),
         Container(
-          height: 50,
-          width: 50,
+          height: 100,
+          width: 45,
           child: Stack(
             children: [
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: Colors.amber,
-                    width: 1,
+                    color: Theme.of(context).primaryColor,
+                    width: 2.5,
                   ),
-                  color: Color.fromRGBO(220, 200, 200, 1),
-                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.amber.shade100,
+                  borderRadius: BorderRadius.circular(20),
                 ),
               ),
               FractionallySizedBox(
                 heightFactor: pctofTotal,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColor,
-                    borderRadius: BorderRadius.circular(10),
+                    color: Theme.of(context).accentColor,
+                    borderRadius: BorderRadius.circular(20),
                   ),
                 ),
               ),
             ],
           ),
         ),
-        SizedBox(
-          height: 4,
+        Text(
+          "$label",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ],
     );

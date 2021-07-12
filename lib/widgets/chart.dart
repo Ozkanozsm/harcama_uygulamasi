@@ -20,8 +20,8 @@ class Chart extends StatelessWidget {
         }
       }
 
-      print("date seysi: " + DateFormat.E().format(day));
-      print("totalsum: " + totalSum.toString());
+      //print("date seysi: " + DateFormat.E().format(day));
+      //print("totalsum: " + totalSum.toString());
       return {"day": DateFormat.E().format(day), "amount": totalSum};
     });
   }
@@ -36,6 +36,7 @@ class Chart extends StatelessWidget {
       elevation: 10,
       margin: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: groupedTxValues.map((data) {
           return ChartBar(data["day"], data["amount"],
               totalSpending == 0.0 ? 0.0 : data["amount"] / totalSpending);
