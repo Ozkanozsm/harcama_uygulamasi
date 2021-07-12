@@ -37,8 +37,8 @@ class Chart extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
       child: Row(
         children: groupedTxValues.map((data) {
-          return ChartBar(
-              data["day"], data["amount"], data["amount"] / totalSpending);
+          return ChartBar(data["day"], data["amount"],
+              totalSpending == 0.0 ? 0.0 : data["amount"] / totalSpending);
         }).toList(),
       ),
     );
