@@ -23,7 +23,7 @@ class Chart extends StatelessWidget {
       //print("date seysi: " + DateFormat.E().format(day));
       //print("totalsum: " + totalSum.toString());
       return {"day": DateFormat.E().format(day), "amount": totalSum};
-    });
+    }).reversed.toList();
   }
 
   double get totalSpending {
