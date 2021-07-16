@@ -38,8 +38,14 @@ class Chart extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: groupedTxValues.map((data) {
-          return ChartBar(data["day"], data["amount"],
-              totalSpending == 0.0 ? 0.0 : data["amount"] / totalSpending);
+          return Flexible(
+            fit: FlexFit.tight,
+            child: ChartBar(
+              data["day"],
+              data["amount"],
+              totalSpending == 0.0 ? 0.0 : data["amount"] / totalSpending,
+            ),
+          );
         }).toList(),
       ),
     );
