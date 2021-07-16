@@ -26,71 +26,41 @@ class TransactionList extends StatelessWidget {
               ],
             )
           : ListView.builder(
+              itemCount: transactions.length,
               itemBuilder: (ctx, index) {
                 return Card(
-                  color: Colors.teal,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(
-                      bottom: Radius.circular(15),
-                    ),
+                  margin: EdgeInsets.symmetric(
+                    horizontal: 5,
+                    vertical: 3,
                   ),
-                  elevation: 25,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        child: ElevatedButton(
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                                Theme.of(context).primaryColor),
-                          ),
-                          child: Icon(
-                            Icons.attach_money_outlined,
-                            color: Colors.white,
-                          ),
-                          onPressed: null,
-                        ),
-                        margin:
-                            EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            transactions[index].title,
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            DateFormat('E, dd-MM-yy')
-                                .format(transactions[index].date),
+                  elevation: 5,
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      child: FittedBox(
+                        child: Padding(
+                          padding: EdgeInsets.all(5),
+                          child: Text(
+                            transactions[index].amount.toStringAsFixed(2),
                             style: TextStyle(
-                                color: Theme.of(context).primaryColorDark,
-                                backgroundColor: Colors.cyanAccent,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        margin: EdgeInsets.all(10),
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Theme.of(context).accentColor,
-                            width: 5,
-                          ),
-                        ),
-                        child: Text(
-                          transactions[index].amount.toStringAsFixed(2),
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
-                    ],
+                    ),
+                    title: Text(
+                      transactions[index].title,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Text(
+                      DateFormat('E, dd-MM-yy')
+                          .format(transactions[index].date),
+                      style:
+                          TextStyle(color: Theme.of(context).primaryColorDark),
+                    ),
                   ),
                 );
               },
-              itemCount: transactions.length,
             ),
     );
   }
