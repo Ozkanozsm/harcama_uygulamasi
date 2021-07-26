@@ -42,6 +42,25 @@ class TransactionInput extends StatelessWidget {
               onSubmitted: (_) => submitTx(),
               // onChanged: (value) => amountInput = value,
             ),
+            Container(
+              height: 50,
+              child: Row(
+                children: [
+                  Text("No Date Chosen"),
+                  TextButton(
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.all<Color>(
+                          Theme.of(context).primaryColor),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      "Choose Date",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             TextButton(
               onPressed: () {
                 submitTx();
