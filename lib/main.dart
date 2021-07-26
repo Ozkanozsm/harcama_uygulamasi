@@ -44,10 +44,6 @@ class MyHomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Card(
-                color: Colors.purpleAccent,
-                child: Text("BURALAR DUTLUK"),
-              ),
               Column(
                 children: [
                   UserTransactions(),
@@ -56,11 +52,6 @@ class MyHomePage extends StatelessWidget {
             ],
           ),
         ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {},
       ),
     );
   }
