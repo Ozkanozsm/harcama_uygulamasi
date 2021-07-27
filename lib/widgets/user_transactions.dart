@@ -54,12 +54,18 @@ class _UserTransactionsState extends State<UserTransactions> {
     });
   }
 
+  void _deleteTx(String id) {
+    setState(() {
+      _transactions.removeWhere((element) => element.id == id);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(children: [
       Chart(_transactions),
       TransactionInput(_addNewTransaction),
-      SingleChildScrollView(child: TransactionList(_transactions)),
+      SingleChildScrollView(child: TransactionList(_transactions, _deleteTx)),
     ]);
   }
 }
